@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf45",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112115",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>User Profile - Sarah Johnson</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header -->
+<div class="flex items-center p-4 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Profile</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-full size-10 bg-transparent text-slate-900 dark:text-slate-100 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Profile Hero -->
+<div class="flex p-6">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 ring-4 ring-primary/20" data-alt="Portrait of a smiling professional woman Sarah Johnson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCE74fhnrTA27wwHD-yCqJCpou2hnme98lDkxyT9qw-xaXarKJm11F6pnktUATyshb0oGh7hcq6zsNtjQiTvfZIGVRiJWdyX6UaNyOeO6fMtlgY2nPxhxdChQ0A0EMdJicYFXI3a0lSqy_5Xg4HIzOwK6FlljiC7dvbkaiPEX2H9gQP2EGOfcIIyqEaWaOPhTAe6utYnpm3VuANAJgV386iyMdCgENUsxCJzuKMQfwqOPz-FEacaaxaahRWIMJd8DmYuebYiuJGxhfL");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-xs !text-[16px]">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-2xl font-bold leading-tight tracking-tight text-center">Sarah Johnson</p>
+<p class="text-primary font-medium text-sm text-center">Premium Member since 2022</p>
+<div class="flex items-center gap-1 mt-1 opacity-70">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<p class="text-sm font-normal text-center">New York, USA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Medical Information Section -->
+<div class="px-6 py-2">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold leading-tight tracking-tight">Medical Information</h3>
+<span class="text-primary text-sm font-semibold">Update</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Blood Type Card -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800/50 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-sm font-medium opacity-60">Blood Type</p>
+<p class="text-base font-bold">O Positive (O+)</p>
+</div>
+</div>
+<!-- Allergies Card -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800/50 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-sm font-medium opacity-60">Known Allergies</p>
+<p class="text-base font-bold">Penicillin, Peanuts</p>
+</div>
+</div>
+<!-- Conditions Card -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800/50 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-sm font-medium opacity-60">Active Conditions</p>
+<p class="text-base font-bold">Mild Asthma</p>
+</div>
+</div>
+</div>
+</div>
+<!-- App Settings Section -->
+<div class="px-6 py-6">
+<h3 class="text-lg font-bold leading-tight tracking-tight mb-4">App Settings</h3>
+<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-slate-800/50 p-2 shadow-sm border border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined opacity-60">notifications</span>
+<span class="flex-1 font-medium">Notifications</span>
+<span class="material-symbols-outlined opacity-30">chevron_right</span>
+</a>
+<div class="h-px bg-slate-100 dark:bg-slate-800 mx-3"></div>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined opacity-60">lock</span>
+<span class="flex-1 font-medium">Privacy &amp; Security</span>
+<span class="material-symbols-outlined opacity-30">chevron_right</span>
+</a>
+<div class="h-px bg-slate-100 dark:bg-slate-800 mx-3"></div>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined opacity-60">help</span>
+<span class="flex-1 font-medium">Help Center</span>
+<span class="material-symbols-outlined opacity-30">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="px-6 pb-24">
+<button class="w-full py-4 rounded-xl border border-red-200 dark:border-red-900/30 text-red-500 font-bold hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                Sign Out
+            </button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto border-t border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pb-6 pt-3">
+<div class="flex justify-between items-center">
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Health</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">History</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined !fill-1">person</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

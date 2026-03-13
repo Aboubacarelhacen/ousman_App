@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Health Monitoring</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf45",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112115",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(23, 207, 69, 0.1) 0%, rgba(23, 207, 69, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight">Health Monitoring</h2>
+<button class="flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">settings</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-6 pb-24">
+<!-- Hero BPM Section -->
+<div class="flex flex-col items-center py-8">
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 rounded-full animate-ping scale-150 opacity-20"></div>
+<div class="relative z-10 bg-primary/10 p-8 rounded-full">
+<span class="material-symbols-outlined text-primary text-5xl">favorite</span>
+</div>
+</div>
+<h1 class="text-6xl font-bold mt-6 tracking-tighter">72<span class="text-2xl font-medium text-slate-400 dark:text-slate-500 ml-1">BPM</span></h1>
+<p class="text-primary font-medium flex items-center gap-2 mt-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                Live Tracking • Optimized
+            </p>
+</div>
+<!-- Real-time Graph Card -->
+<section class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 mb-6">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-bold text-lg">Heart Rate</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Last 15 minutes</p>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">Real-time</span>
+</div>
+<div class="h-48 w-full relative">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 150">
+<defs>
+<lineargradient id="line-grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color: #17cf45; stop-opacity: 0.2"></stop>
+<stop offset="100%" style="stop-color: #17cf45; stop-opacity: 0"></stop>
+</lineargradient>
+</defs>
+<!-- Area -->
+<path d="M0,100 Q50,80 100,110 T200,70 T300,90 T400,60 V150 H0 Z" fill="url(#line-grad)"></path>
+<!-- Line -->
+<path d="M0,100 Q50,80 100,110 T200,70 T300,90 T400,60" fill="none" stroke="#17cf45" stroke-linecap="round" stroke-width="3"></path>
+<!-- Points -->
+<circle class="animate-pulse" cx="400" cy="60" fill="#17cf45" r="4"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+<span>14:00</span>
+<span>14:05</span>
+<span>14:10</span>
+<span>14:15</span>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">trending_up</span>
+</div>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Max Today</p>
+<p class="text-2xl font-bold mt-1">142 <span class="text-sm font-normal text-slate-400">BPM</span></p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">equalizer</span>
+</div>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Average</p>
+<p class="text-2xl font-bold mt-1">68 <span class="text-sm font-normal text-slate-400">BPM</span></p>
+</div>
+</div>
+<!-- Health Alert Info -->
+<div class="mt-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-slate-900 dark:text-slate-100">Status: Stable</h4>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-snug">Your heart rate has been consistent for the last 4 hours.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 px-6 pb-6 pt-3 z-20">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Health</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 relative" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-1 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="size-6 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700">
+<img class="w-full h-full object-cover" data-alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPT6mPelw1hAEvnnvh0njJaOa-axsKD3QZ35_JnFbuXDhG0cTWq6-QiJ_h4xMHEELgwWvj9_4yM-y32EZXu7AP-WWOFi9mDARIhButMYA08BV7FzYzjj-e-XK0xOO3dQn72qJFoD6zdOse7Gjx9r71buvKq3y1SIBsZGt659FFE0f2ki4tGtNS0oPo3R4eZg7i5DJwVkF_3TS7Cesg6wtN8tx-QxosJKsjzfHQc63uR6T4cL3rHbitvzxREtBstvtWKlTV_61tyeE7"/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

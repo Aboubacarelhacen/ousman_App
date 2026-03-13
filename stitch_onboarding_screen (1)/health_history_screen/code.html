@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf45",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112115",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(23, 207, 69, 0.1);
+        }
+        .dark .glass-card {
+            background: rgba(17, 33, 21, 0.8);
+            border: 1px solid rgba(23, 207, 69, 0.2);
+        }
+        .chart-gradient {
+            fill: url(#chart-fill);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-primary/10">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Health History</h1>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-4 py-6 space-y-8">
+<!-- View Selector -->
+<div class="bg-primary/5 p-1.5 rounded-xl flex items-center justify-between">
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg text-primary/60 hover:text-primary">Daily</button>
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white dark:bg-background-dark text-primary shadow-sm">Weekly</button>
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg text-primary/60 hover:text-primary">Monthly</button>
+</div>
+<!-- Main Health Card -->
+<section class="glass-card rounded-xl p-6 shadow-xl shadow-primary/5">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Heart Rate Trends</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-4xl font-extrabold tracking-tighter">72</span>
+<span class="text-lg font-bold text-slate-400">BPM</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-red-500 flex items-center text-sm font-bold bg-red-50 dark:bg-red-950/30 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">trending_down</span>
+                        4%
+                    </span>
+<p class="text-[10px] text-slate-400 mt-1 uppercase tracking-wider font-bold">vs last week</p>
+</div>
+</div>
+<!-- SVG Chart -->
+<div class="relative h-48 w-full mt-4">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 150">
+<defs>
+<lineargradient id="chart-fill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#17cf45" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#17cf45" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line class="text-slate-200 dark:text-slate-800" stroke="currentColor" stroke-dasharray="4" x1="0" x2="400" y1="0" y2="0"></line>
+<line class="text-slate-200 dark:text-slate-800" stroke="currentColor" stroke-dasharray="4" x1="0" x2="400" y1="50" y2="50"></line>
+<line class="text-slate-200 dark:text-slate-800" stroke="currentColor" stroke-dasharray="4" x1="0" x2="400" y1="100" y2="100"></line>
+<!-- Area Path -->
+<path class="chart-gradient" d="M0 110 Q 40 80, 80 100 T 160 60 T 240 90 T 320 40 T 400 70 L 400 150 L 0 150 Z"></path>
+<!-- Line Path -->
+<path d="M0 110 Q 40 80, 80 100 T 160 60 T 240 90 T 320 40 T 400 70" fill="none" stroke="#17cf45" stroke-linecap="round" stroke-width="4"></path>
+<!-- Highlight Point -->
+<circle class="shadow-lg" cx="320" cy="40" fill="#17cf45" r="6"></circle>
+<circle cx="320" cy="40" fill="none" opacity="0.3" r="10" stroke="#17cf45" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between mt-4 px-1">
+<span class="text-[11px] font-bold text-slate-400 uppercase">Mon</span>
+<span class="text-[11px] font-bold text-slate-400 uppercase">Tue</span>
+<span class="text-[11px] font-bold text-slate-400 uppercase">Wed</span>
+<span class="text-[11px] font-bold text-primary uppercase">Thu</span>
+<span class="text-[11px] font-bold text-slate-400 uppercase">Fri</span>
+<span class="text-[11px] font-bold text-slate-400 uppercase">Sat</span>
+<span class="text-[11px] font-bold text-slate-400 uppercase">Sun</span>
+</div>
+</section>
+<!-- Comparisons Grid -->
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                Weekly Comparison
+            </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card rounded-xl p-4 flex flex-col gap-2">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Avg Pulse</p>
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold">68</span>
+<span class="text-xs font-medium text-slate-400">BPM</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 rounded-full mt-2">
+<div class="bg-primary h-1 rounded-full w-[70%]"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-2">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Resting</p>
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold">54</span>
+<span class="text-xs font-medium text-slate-400">BPM</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 rounded-full mt-2">
+<div class="bg-blue-400 h-1 rounded-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Insights -->
+<section class="space-y-4">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                Recent Insights
+            </h3>
+<div class="space-y-3">
+<!-- Insight Card 1 -->
+<div class="glass-card p-4 rounded-xl flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">directions_run</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Recovery is improving</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Your heart rate returns to resting state 12% faster after exercise.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<!-- Insight Card 2 -->
+<div class="glass-card p-4 rounded-xl flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 flex-shrink-0">
+<span class="material-symbols-outlined">bedtime</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Deep sleep peak</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Consistency in your bedtime has led to better resting pulse rates.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<!-- Insight Card 3 -->
+<div class="glass-card p-4 rounded-xl flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-500 flex-shrink-0">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold">Hydration impact</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Higher water intake today correlates with a stable heart rate.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-primary/10 px-6 py-2 pb-6 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Health Data</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-bold">history</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">History</span>
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

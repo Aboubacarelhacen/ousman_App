@@ -1,0 +1,162 @@
+INJECTION MOLDING KNOWLEDGE BASE
+Industrial AI Root Cause Analysis System
+
+--------------------------------------------------
+PROCESS OVERVIEW
+--------------------------------------------------
+
+Injection molding is a manufacturing process used to produce parts by injecting molten material into a mold.
+
+The process generally includes the following stages:
+
+1. Plasticizing
+Plastic pellets are melted in the machine barrel using heat and screw rotation.
+
+2. Injection
+The molten plastic is injected into the mold cavity under high pressure.
+
+3. Packing / Holding
+Pressure is maintained to compensate for material shrinkage.
+
+4. Cooling
+The part cools and solidifies inside the mold.
+
+5. Ejection
+The finished part is ejected from the mold.
+
+--------------------------------------------------
+IMPORTANT MACHINE PARAMETERS
+--------------------------------------------------
+
+Cylinder Temperature
+Controls the temperature of the molten plastic.
+
+Too High:
+- Material degradation
+- Burn marks
+
+Too Low:
+- Poor flow
+- Short shots
+
+--------------------------------------------------
+
+Mold Temperature
+Controls cooling speed.
+
+Too High:
+- Longer cycle time
+- Warpage risk
+
+Too Low:
+- Surface defects
+- Poor part quality
+
+--------------------------------------------------
+
+Injection Speed
+Determines how fast material enters the mold.
+
+Too Fast:
+- Flash
+- Burn marks
+
+Too Slow:
+- Incomplete filling
+- Flow marks
+
+--------------------------------------------------
+
+Holding Pressure
+Maintains pressure during cooling.
+
+Too High:
+- Flash
+- Internal stress
+
+Too Low:
+- Sink marks
+- Voids
+
+--------------------------------------------------
+
+Cooling Time
+Determines how long the part remains in the mold.
+
+Too Short:
+- Warping
+- Deformation
+
+Too Long:
+- Reduced productivity
+
+--------------------------------------------------
+COMMON DEFECTS
+--------------------------------------------------
+
+Short Shot
+The mold cavity is not completely filled.
+
+Possible causes:
+- Low injection pressure
+- Low material temperature
+- Slow injection speed
+
+--------------------------------------------------
+
+Flash
+Excess material leaks outside the mold.
+
+Possible causes:
+- High injection pressure
+- Mold misalignment
+- High holding pressure
+
+--------------------------------------------------
+
+Sink Marks
+Depressions on the part surface.
+
+Possible causes:
+- Insufficient packing pressure
+- Thick sections cooling unevenly
+
+--------------------------------------------------
+
+Warping
+Part deformation after cooling.
+
+Possible causes:
+- Uneven cooling
+- Mold temperature imbalance
+
+--------------------------------------------------
+
+Burn Marks
+Dark discoloration on the part.
+
+Possible causes:
+- Trapped air
+- Excessive temperature
+- High injection speed
+
+--------------------------------------------------
+ROOT CAUSE ANALYSIS PRINCIPLES
+--------------------------------------------------
+
+Industrial root cause analysis involves identifying which machine parameters are responsible for defects.
+
+AI models analyze historical production data and detect relationships between machine settings and product quality.
+
+Typical analysis methods include:
+
+- Feature importance analysis
+- Correlation analysis
+- Machine learning models
+- SHAP explainability analysis
+
+--------------------------------------------------
+
+Goal of this AI system:
+
+Predict product quality and identify the machine parameters responsible for defects.

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#17cf45",
+                "emergency": "#ef4444",
+                "background-light": "#f6f8f6",
+                "background-dark": "#112115",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<title>Emergency Alert</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto overflow-x-hidden border-x border-slate-200 dark:border-slate-800 shadow-2xl">
+<!-- Header -->
+<div class="flex items-center p-6 justify-between">
+<button class="size-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Emergency Alert</h2>
+</div>
+<!-- Main Alert Section -->
+<main class="flex-1 flex flex-col items-center px-6 pt-8">
+<div class="w-24 h-24 rounded-full bg-emergency/10 flex items-center justify-center mb-8 relative">
+<div class="absolute inset-0 rounded-full border-4 border-emergency animate-ping opacity-25"></div>
+<span class="material-symbols-outlined text-emergency text-5xl">ecg_heart</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-black leading-tight text-center mb-4 px-4 uppercase">
+                Abnormal Heart Rate Detected
+            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-relaxed text-center max-w-xs mb-10">
+                Your heart rate has exceeded <span class="text-emergency font-bold">120 bpm</span> while at rest. Emergency services will be notified automatically.
+            </p>
+<!-- Countdown Timer -->
+<div class="w-full grid grid-cols-2 gap-4 mb-12">
+<div class="flex flex-col items-center gap-3 p-6 rounded-xl bg-emergency/5 border border-emergency/10">
+<div class="text-4xl font-black text-emergency tracking-tighter">00</div>
+<div class="text-xs font-bold uppercase tracking-widest text-slate-500">Minutes</div>
+</div>
+<div class="flex flex-col items-center gap-3 p-6 rounded-xl bg-emergency text-white shadow-lg shadow-emergency/20">
+<div class="text-4xl font-black tracking-tighter">10</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-80">Seconds</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-4 mt-auto pb-12">
+<button class="w-full h-16 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">cancel</span>
+                    CANCEL ALERT
+                </button>
+<button class="w-full h-16 bg-emergency/10 text-emergency rounded-xl font-bold text-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-emergency">call</span>
+                    CALL NOW
+                </button>
+</div>
+</main>
+<!-- Map Snippet (Emergency Context) -->
+<div class="px-6 mb-6">
+<div class="h-24 w-full rounded-xl overflow-hidden relative border border-slate-200 dark:border-slate-800">
+<img alt="Map showing current location" class="w-full h-full object-cover opacity-60" data-alt="Map showing current city location pins" data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtGBuEUNIVx-U5-cvcUpvpfdz-HENOo1pzXro4F6FoMOFIyo6H6SU3vRAozsz9hI4W5VC6svgM-QOcmWu-8tkMoZQVIaUyBpx6xiOQYiHLNKTGZgTlfOTkojaJz5PvZ2IqPAJj7kFYY2d7qGfhw9fvfMBWtaaJep4l4_4xi-dIJbt_vlY2BUVb1OXdh8YdUVnqfPlCXq05S6Qxpoc7IszpRrrRj0QLef39Lsgqv0ZW31fNf1dnqAKjDQxfqWr-5pmjaVhSI4Gd3wNT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+<div class="absolute bottom-2 left-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-300">Current Location Shared</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 pb-8 pt-4 sticky bottom-0">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-bold leading-normal uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+<p class="text-[10px] font-bold leading-normal uppercase tracking-wider">Health</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">notifications_active</span>
+<p class="text-[10px] font-bold leading-normal uppercase tracking-wider">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<p class="text-[10px] font-bold leading-normal uppercase tracking-wider">History</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-bold leading-normal uppercase tracking-wider">Profile</p>
+</a>
+</nav>
+</div>
+</body></html>

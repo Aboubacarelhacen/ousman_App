@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Ousma",
+    "slug": "ousma",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["ios", "android", "web"],
+    "web": {
+      "bundler": "metro"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "sdkVersion": "54.0.0"
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency Contacts Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf45",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112115",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 px-6 py-4 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Emergency Contacts</h1>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="flex-1 px-6 pb-24">
+<!-- Hero Card / Summary -->
+<div class="mt-4 rounded-xl bg-primary p-6 text-white shadow-lg shadow-primary/20">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium opacity-90 uppercase tracking-wider">Quick Access</span>
+<span class="material-symbols-outlined">emergency</span>
+</div>
+<h2 class="text-2xl font-bold">Priority Alerts Active</h2>
+<p class="mt-1 text-sm opacity-80">Contacts will be notified immediately in case of an incident detection.</p>
+</div>
+<!-- List Section -->
+<div class="mt-8 flex items-center justify-between">
+<h3 class="text-lg font-bold">Primary Contacts</h3>
+<span class="text-sm font-medium text-primary">3 Saved</span>
+</div>
+<!-- Contact Cards -->
+<div class="mt-4 space-y-4">
+<!-- Contact 1 -->
+<div class="group relative flex items-center justify-between rounded-xl bg-white dark:bg-slate-800/50 p-4 border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border-2 border-primary/20">
+<img class="h-full w-full object-cover" data-alt="Portrait of Sarah Jenkins, smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG_IiVeS0w43imqdRlA4jNTkwwAAm9zpRmub1sunVVktUIalfenYBEWGM-kJRzmFslnPuEXJVbUS1ZH7lygNNS-ZT_T-l5gJoEeQ5mooB0evtDUfvjtxit9BDANuTMjW4WkdG2tqyW4mcXgkP3AtTpj3Lio3yDhoG6LRTyFQsGBgikM-mdM_KruA4hALgVf9shAtajfWczYzn3BGFcior827yGu4jFWZWfrgG4JBJnIS3h1Z26uGKecY_Gl1HzgjztLYgpwaAbUfFv"/>
+</div>
+<div>
+<p class="text-base font-bold leading-tight">Sarah Jenkins</p>
+<p class="text-sm font-medium text-primary">Spouse</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">(555) 012-3456</p>
+</div>
+</div>
+<div class="flex gap-2">
+<a class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors" href="tel:5550123456">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+<!-- Contact 2 -->
+<div class="group relative flex items-center justify-between rounded-xl bg-white dark:bg-slate-800/50 p-4 border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border-2 border-primary/20">
+<img class="h-full w-full object-cover" data-alt="Portrait of Dr. Michael Chen, professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA41v8nkAmeRhEOc8q87xy_d_yADkCScG6Zu0DFSto8VclGGhDtedOfUz7q8rRwharFevzbaaZEe2XYJhZXclXG5sqNbLqBc0BxI8ztZ4NqfBESAnC6FYEyBS5t-01zRr64xaUI68jUlvm8u-xoMoc5OaKQ12TMgNQQzk1M3KxQRqnc8-3Q9ZjFyPlyx_sTIoD7jY20mGLf8CNp5j70VNJazh8OeK-J6RxKfNr6mQFnILekAkD7tN05Vg-LhMLpCrHwYjfpLMRJJxfc"/>
+</div>
+<div>
+<p class="text-base font-bold leading-tight">Dr. Michael Chen</p>
+<p class="text-sm font-medium text-primary">Primary Physician</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">(555) 098-7654</p>
+</div>
+</div>
+<div class="flex gap-2">
+<a class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors" href="tel:5550987654">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+<!-- Contact 3 -->
+<div class="group relative flex items-center justify-between rounded-xl bg-white dark:bg-slate-800/50 p-4 border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-primary/50">
+<div class="flex items-center gap-4">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border-2 border-primary/20">
+<img class="h-full w-full object-cover" data-alt="Portrait of David Wilson, smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArw_gES-MvNxTIPuep0jSZkCMhz4SAT5byvTVR6K5w5YnE1p4vuITGNoROJTh5L4VcBsZO4U-aDcNCmdrCGPySBU2sNa6At9Fzk34thawdi4tuBjDzjO_fuknxDlO9pKs5OAbVvOoUb6x4YgQOAVnuGFN3ouMLq1hCEpFAIJCDBeOMJ8ZHX32izkrQ5SpUZpKolKPmTpvkp-akGDxNsMx9UB0LPodp9WuQh8e-szBkLSjvbJ93tXpwvU7njnH-HrxBnaH56r9T00xd"/>
+</div>
+<div>
+<p class="text-base font-bold leading-tight">David Wilson</p>
+<p class="text-sm font-medium text-primary">Brother</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">(555) 234-5678</p>
+</div>
+</div>
+<div class="flex gap-2">
+<a class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors" href="tel:5552345678">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Add Button Section -->
+<div class="mt-10 flex flex-col items-center">
+<button class="flex w-full max-w-xs items-center justify-center gap-3 rounded-full bg-primary py-4 text-white shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-bold">Add New Contact</span>
+</button>
+<p class="mt-4 text-center text-xs text-slate-400 dark:text-slate-500 px-8">
+                    Registered emergency contacts can receive your location and health vitals during an alert.
+                </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 pb-6 pt-2 backdrop-blur-md">
+<div class="mx-auto flex max-w-lg items-center justify-around px-4">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">ecg</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Health Data</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined material-symbols-fill">notifications</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>
