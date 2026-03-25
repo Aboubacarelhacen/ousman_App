@@ -1,104 +1,55 @@
-# AI Destekli Endüstriyel Kök Neden Analizi Sistemi
+# Ousma Mobile App (Expo)
 
-## Proje Tanımı
+This project is configured as an Expo React Native app.
 
-Bu proje, üretim tesislerinde özellikle enjeksiyon kalıplama (injection molding) süreçlerinde oluşan kalite problemlerinin otomatik olarak tespit edilmesini ve bu problemlerin kök nedenlerinin yapay zeka kullanılarak analiz edilmesini amaçlayan bir endüstriyel yapay zeka sistemidir.
+## Requirements
 
-Günümüzde üretim tesislerinde kalite kontrol genellikle manuel analizler veya basit istatistiksel yöntemlerle yapılmaktadır. Bu yöntemler çoğu zaman hatanın gerçek sebebini hızlı bir şekilde ortaya çıkaramamaktadır.
+- Node.js 20+
+- npm 10+
+- Xcode (for iOS simulator) and/or Android Studio (for Android emulator)
 
-Bu proje kapsamında geliştirilecek sistem, makine sensör verilerini ve üretim parametrelerini analiz ederek:
+## Clean Restart (from scratch)
 
-- Üretilen parçanın hatalı olup olmadığını tahmin edecek
-- Hatanın oluşmasına sebep olan makine parametrelerini belirleyecek
-- Kullanıcıya anlaşılır bir kök neden analizi sunacaktır
+Use this when you want to reset the Expo setup fully.
 
-Bu sayede üretim süreçlerinde kalite kontrol süreçleri hızlanacak ve üretim verimliliği artırılacaktır.
+```bash
+npm run clean
+npm install
+npx expo install --fix
+```
 
----
+## Run the App (Expo Development Build)
 
-## Projenin Amacı
+This project now uses development builds by default (not Expo Go).
 
-Bu projenin temel amacı, üretim tesislerinde kullanılan makine verilerini analiz ederek aşağıdaki yeteneklere sahip bir yapay zeka sistemi geliştirmektir:
+```bash
+npm run start
+```
 
-- Üretim verilerini analiz edebilme
-- Ürün kalitesini tahmin edebilme
-- Üretim hatalarının kök nedenlerini belirleyebilme
-- Kullanıcıya açıklanabilir analiz sunabilme
+Then build and launch native apps:
 
----
+```bash
+npm run ios
+npm run android
+```
 
-## Kullanılacak Teknolojiler
+## Optional: Expo Go Mode
 
-Bu proje modern yapay zeka ve yazılım teknolojileri kullanılarak geliştirilecektir.
+If you need Expo Go temporarily:
 
-### Backend
-- Python
-- FastAPI
-- Machine Learning (Scikit-Learn / XGBoost)
+```bash
+npm run start:go
+```
 
-### AI ve Veri Analizi
-- Pandas
-- NumPy
-- Feature Engineering
-- Root Cause Analysis
+## Diagnostics
 
-### Yapay Zeka Bileşenleri
-- Sentence Transformers
-- FAISS Vector Database
-- Large Language Models (LLM)
+```bash
+npx expo-doctor
+```
 
-### Web Teknolojileri
-- .NET Backend
-- React Frontend
+If Watchman warnings appear:
 
----
-
-## Sistem Mimarisi (High Level)
-
-Sistem aşağıdaki ana bileşenlerden oluşacaktır:
-
-1. Veri Yükleme Modülü  
-2. Veri Ön İşleme Modülü  
-3. Makine Öğrenmesi Modeli  
-4. Kök Neden Analizi Motoru  
-5. Yapay Zeka Açıklama Sistemi  
-6. Web Arayüzü
-
----
-
-## MVP (Minimum Viable Product)
-
-Projenin ilk çalışabilir versiyonunda aşağıdaki özellikler bulunacaktır:
-
-- Kullanıcı veri seti yükleyebilecek
-- Yapay zeka modeli kalite tahmini yapabilecek
-- Sistem hatanın oluşmasına sebep olan parametreleri gösterecek
-- Kullanıcıya açıklanabilir bir analiz sunulacak
-
----
-
-## Proje Geliştiricisi
-
-Adım: [Adınızı buraya yazın]
-
-Ben bilgisayar mühendisliği / yazılım mühendisliği alanında eğitim gören bir öğrenciyim ve özellikle aşağıdaki alanlara ilgi duyuyorum:
-
-- Yapay zeka sistemleri
-- Endüstriyel veri analizi
-- Makine öğrenmesi
-- Yazılım mimarisi
-
-Bu proje ile birlikte gerçek dünya üretim problemlerini çözebilen bir yapay zeka sistemi geliştirmeyi hedefliyorum.
-
----
-
-## Proje Durumu
-
-Şu anda proje planlama ve analiz aşamasındadır.
-
-Sonraki adımlar:
-
-1. Veri seti analizi
-2. Sistem mimarisi tasarımı
-3. Prototype geliştirme
-4. MVP implementasyonu
+```bash
+watchman watch-del '/Users/aboubacarelhacen/ousma'
+watchman watch-project '/Users/aboubacarelhacen/ousma'
+```
